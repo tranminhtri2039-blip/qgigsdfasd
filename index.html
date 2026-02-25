@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Bệnh Sốt Xuất Huyết</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            line-height: 1.8; 
+            color: #333;
+            background-color: #f4f4f4;
+            font-size: 19px; 
+        }
+        .header {
+            background: #d32f2f;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            font-size: 30px; 
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .menu {
+            background: #333;
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .menu button {
+            color: white;
+            border: none;
+            background: none;
+            padding: 18px 10px;
+            cursor: pointer;
+            font-size: 18px; 
+            flex: 1;
+            transition: 0.3s;
+        }
+        .menu button.active-btn {
+            background: #d32f2f;
+            font-weight: bold;
+        }
+        .content {
+            padding: 30px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
+        h2 {
+            color: #d32f2f;
+            border-bottom: 3px solid #d32f2f;
+            padding-bottom: 10px;
+            font-size: 28px; 
+        }
+        h3 { color: #1976d2; margin-top: 25px; font-size: 24px; }
+        
+        .img-small {
+            width: 80%; 
+            display: block;
+            margin: 15px auto; 
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .img-normal {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        ul { margin-left: 25px; }
+        li { margin-bottom: 12px; }
+        
+        .highlight {
+            background: #fff3f3;
+            border-left: 6px solid #d32f2f;
+            padding: 20px;
+            margin: 25px 0;
+            font-weight: 500;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 16px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">Sốt Xuất Huyết Dengue</div>
+
+<div class="menu">
+    <button id="btn-overview" class="active-btn" onclick="showSection('overview')">Tổng Quan</button>
+    <button id="btn-causes" onclick="showSection('causes')">Nguyên Nhân</button>
+    <button id="btn-symptoms" onclick="showSection('symptoms')">Biểu Hiện</button>
+    <button id="btn-prevention" onclick="showSection('prevention')">Phòng Ngừa</button>
+</div>
+
+<div class="content">
+
+    <div id="overview" class="section active">
+        <h2>1. Tổng Quan Về Bệnh</h2>
+        <img class="img-small" src="https://ums.vnu.edu.vn/files/uploads/2021/05/sot-xuat-huyet-nhung-dieu-moi-nguoi-nen-biet1.jpg" alt="Chu trình lây truyền">
+        <p>Sốt xuất huyết Dengue là bệnh truyền nhiễm cấp tính do virus Dengue gây ra. Bệnh lây lan do muỗi vằn (Aedes aegypti) hút máu người mang mầm bệnh rồi truyền sang người lành qua vết đốt.</p>
+    </div>
+
+    <div id="causes" class="section">
+        <h2>2. Nguyên Nhân Gây Bệnh</h2>
+        <img class="img-small" src="https://www.hcdc.vn/public/img/02bf8460bf0d6384849ca010eda38cf8e9dbc4c7/images/mod1/images/sot-xuat-huyet-la-gi-va-benh-co-nguy-hiem-khong/images/2006141543.jpg" alt="Nguyên nhân Sốt xuất huyết">
+        <p>Bệnh phát sinh do sự kết hợp của virus Dengue và muỗi vằn truyền bệnh:</p>
+        <ul>
+            <li>Người mang mầm bệnh là nguồn lây chính.</li>
+            <li>Muỗi vằn hút máu từ người bệnh mang virus.</li>
+            <li>Muỗi mang virus sau đó đốt người khỏe mạnh và truyền bệnh.</li>
+        </ul>
+    </div>
+
+    <div id="symptoms" class="section">
+        <h2>3. Biểu Hiện & Hậu Quả</h2>
+        <img class="img-normal" src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/5/8/benh-sot-xuat-huyet-2-1652012672578410043271.jpg" alt="Triệu chứng">
+        <h3>Dấu hiệu thường gặp:</h3>
+        <ul>
+            <li>Sốt cao liên tục (39-40°C), kéo dài 2-7 ngày.</li>
+            <li>Đau đầu, đau nhức hốc mắt, đau mỏi cơ và khớp xương.</li>
+            <li>Phát ban đỏ, chảy máu cam hoặc chảy máu chân răng.</li>
+        </ul>
+
+        <div class="highlight">
+            <h3>Hậu quả nguy hiểm:</h3>
+            <ul>
+                <li><strong>Sốc Dengue:</strong> Suy tuần hoàn đột ngột do mất máu và thoát dịch.</li>
+                <li><strong>Suy đa tạng:</strong> Gây tổn thương nghiêm trọng đến gan, thận và não.</li>
+                <li><strong>Tử vong:</strong> Đây là nguy cơ lớn nhất nếu không được phát hiện và cấp cứu kịp thời.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="prevention" class="section">
+        <h2>4. Biện Pháp Phòng Ngừa</h2>
+        <img class="img-normal" src="https://sontra.danang.gov.vn/Uploads/TinTuc/SXH%2004.jpg" alt="Phòng chống sốt xuất huyết">
+        <p><strong>"Không có lăng quăng, không có sốt xuất huyết"</strong>. Các biện pháp bao gồm:</p>
+        <ul>
+            <li>Đậy kín lu, bể chứa nước; thả cá diệt bọ gậy (lăng quăng).</li>
+            <li>Vệ sinh nhà cửa sạch sẽ, phát quang bụi rậm quanh nhà.</li>
+            <li>Ngủ màn kể cả ban ngày và mặc quần áo dài tay.</li>
+        </ul>
+
+        <div class="highlight" style="background: #e3f2fd; border-left-color: #1976d2;">
+            <strong>LƯU Ý QUAN TRỌNG:</strong> Tuyệt đối không tự ý dùng <strong>Aspirin</strong> hoặc <strong>Ibuprofen</strong> để hạ sốt vì hai loại thuốc này khiến máu khó đông, làm tình trạng xuất huyết nặng hơn.
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    Nguồn thông tin: Bộ Y Tế & WHO
+</div>
+
+<script>
+    function showSection(id) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+
+        const buttons = document.querySelectorAll('.menu button');
+        buttons.forEach(b => b.classList.remove('active-btn'));
+        document.getElementById('btn-' + id).classList.add('active-btn');
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
